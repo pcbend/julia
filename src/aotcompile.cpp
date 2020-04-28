@@ -738,6 +738,7 @@ void addOptimizationPasses(legacy::PassManagerBase *PM, int opt_level,
     }
     PM->add(createCombineMulAddPass());
     PM->add(createDivRemPairsPass());
+    PM->add(createRemoveJuliaAddrspaces());
 }
 
 // An LLVM module pass that just runs all julia passes in order. Useful for
